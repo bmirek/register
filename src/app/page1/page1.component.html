@@ -1,0 +1,58 @@
+<div class="form-1">
+    <form [formGroup]="formOne" (ngSubmit)="onSubmit()">
+        <div class="container">
+            <div class="sub-container">
+                <input type="text" placeholder="Imię..." formControlName="fName">
+                <div class="error" *ngIf="required('fName')">
+                    Imię jest wymagane
+                </div>
+                <input type="text" placeholder="Nazwisko..." formControlName="lName">
+                <div class="error" *ngIf="required('lName')">
+                    Nazwisko jest wymagane
+                </div>
+                <input type="text" placeholder="PESEL..." formControlName="pesel">
+                <div class="error" *ngIf="required('pesel')">
+                    Pesel jest wymagany
+                </div>
+                <div class="error" *ngIf="isDataValid('pesel')">
+                    Poprawny Pesel jest wymagany
+                </div>
+                <input type="email" placeholder="E-mail..." formControlName="email">
+                <div class="error" *ngIf="required('email')">
+                    Email jest wymagany
+                </div>
+                <div class="error" *ngIf="isDataValid('email')">
+                    Poprawny email jest wymagany
+                </div>
+                <input type="text" placeholder="Mobile..." formControlName="phone">
+                <div class="error" *ngIf="required('phone')">
+                    Telefon jest wymagany
+                </div>
+                <div class="error" *ngIf="isDataValid('phone')">
+                    np. +48 123 456 789, 0048-987-654-321
+                </div>
+            </div>
+            <div class="button-row">
+                <button class="clear"
+                        (click)="goClear()"
+                >
+                    <!--          <mat-icon class="mat-icon">cancel</mat-icon>-->
+                    Kasuj
+                </button>
+                <button *ngIf="!formOne.invalid;" class="next"
+                        type="button"
+                        (click)="goNext()"
+                >
+                    Dalej
+                    <!--          <mat-icon class="mat-icon">keyboard_arrow_right</mat-icon>-->
+                </button>
+                <button *ngIf="formOne.invalid;" class="no-next"
+                        type="button"
+                >
+                    Dalej
+                    <!--          <mat-icon class="mat-icon">keyboard_arrow_right</mat-icon>-->
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

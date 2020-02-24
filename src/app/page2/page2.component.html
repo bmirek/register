@@ -1,0 +1,90 @@
+<div class="form-1">
+    <form [formGroup]="formTwo" (ngSubmit)="onSubmit()">
+        <div class="container">
+            <div class="sub-container">
+                <input type="text" placeholder="Login..." formControlName="login">
+                <div class="error" *ngIf="required('login')">
+                    Login jest wymagany
+                </div>
+                <div class="error" *ngIf="isDataValid('login');">
+                    Poprawny login jest wymagany
+                </div>
+                <div class="password-row">
+                    <input id="password" type="password" class="password" placeholder="Hasło..."
+                           formControlName="pass1">
+                    <div id="password-icon">
+                        <mat-icon matTooltip="Ukryj hasło" matTooltipPosition="above" id="password-icon-visibility"
+                                  class="icon-visibility" (click)="onChangeClick('password')">visibility
+                        </mat-icon>
+                        <mat-icon matTooltip="Pokaż hasło" matTooltipPosition="above" id="password-icon-visibility-off"
+                                  class="icon-visibility" (click)="onChangeClick('password')">visibility_off
+                        </mat-icon>
+                    </div>
+                </div>
+                <div class="error" *ngIf="required('pass1')">
+                    Hasło jest wymagane
+                </div>
+                <div class="error" *ngIf="isDataValid('pass1');">
+                    Silne hasło jest wymagane
+                </div>
+                <div class="password-row">
+                    <input id="confirm" type="password" class="password" placeholder="Powtórz hasło..."
+                           formControlName="pass2"
+                           onselectstart="return false" onpaste="return false;" onCopy="return false"
+                           onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+                    <div id="confirm-icon">
+                        <mat-icon matTooltip="Ukryj hasło" matTooltipPosition="above" id="confirm-icon-visibility"
+                                  class="icon-visibility" (click)="onChangeClick('confirm')">visibility
+                        </mat-icon>
+                        <mat-icon matTooltip="Pokaż hasło" matTooltipPosition="above" id="confirm-icon-visibility-off"
+                                  class="icon-visibility" (click)="onChangeClick('confirm')">visibility_off
+                        </mat-icon>
+                    </div>
+                </div>
+                <div class="error" *ngIf="required('pass2')">
+                    Hasło należy powtórzyć
+                </div>
+                <div class="error" *ngIf="isRepeatedPasswordMatch('pass2');">
+                    Hasła nie są identyczne
+                </div>
+                <div class="check-box-row">
+                    <mat-checkbox formControlName="accept"
+                                  id="acceptTerms"
+                                  class="form-check-input"
+                                  [labelPosition]="'after'"
+                                  (click)="showValidation()"
+                    >
+                        Akceptuję treść zadania:&nbsp;
+                        <a href="../../assets/doc/Zadanie-rektrutacyjne-angular.pdf" target="_blank">Zadanie</a>
+                    </mat-checkbox>
+                </div>
+                <div class="error" *ngIf="isChecked('accept')">
+                    Należy zaakceptować zadanie
+                </div>
+            </div>
+            <div class="button-row">
+                <div class="form-buttons">
+                    <button class="back"
+                            (click)="goBack()"
+                            type="button"
+                    >
+                        <span class="label">Cofnij</span>
+                    </button>
+                    <button *ngIf="!formTwo.invalid;" class="next"
+                            (click)="goDone()"
+                            type="button"
+                    >
+                        <span class="label">Dalej</span>
+                    </button>
+                    <button *ngIf="formTwo.invalid;" class="no-next"
+                            type="button"
+                    >
+                        <span class="label">Dalej</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
+

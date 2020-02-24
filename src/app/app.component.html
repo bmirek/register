@@ -1,0 +1,11 @@
+<app-header></app-header>
+<div *ngIf="whichOne == 'Page1';">
+  <app-page1></app-page1>
+</div>
+<div *ngIf="whichOne == 'Page2';">
+  <app-page2 [email]="email"></app-page2>
+</div>
+<div *ngIf="whichOne == 'Page3';">
+<app-page3 ></app-page3>
+</div>
+<app-footer [page]="whichOne" (response)="getResponse($event)"></app-footer>

@@ -1,0 +1,251 @@
+/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../node_modules/font-awesome/css/font-awesome.min.css';
+@import 'assets/styles/base';
+@import '../node_modules/@angular/material/prebuilt-themes/indigo-pink.css';
+/*@import '../node_modules/@angular/modules/prebuilt-themes/pink-bluegrey.css';*/
+/*@import '../node_modules/@angular/modules/prebuilt-themes/deeppurple-amber.css';*/
+/*@import '../node_modules/@angular/modules/prebuilt-themes/purple-green.css';*/
+
+body {
+  /* Background pattern from subtlepatterns.com */
+  background-image: url('./assets/img/hexellence.png');
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  color: #111;
+}
+
+a:link {
+  color: #36b03c;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #36b03c;
+}
+
+a:active {
+  color: #36b03c;
+}
+
+a:hover {
+  color: #37b93d;
+  text-decoration: underline;
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
+  font-size: 45px;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 3px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.mat-toolbar h5 {
+  font-family: 'Lobster', cursive;
+  font-size: 25px;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+p {
+  text-align: center;
+}
+
+.container {
+  background-color: white;
+  width: 400px;
+  //height: 633px;
+  padding: 40px 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+  -webkit-box-shadow: 3px 3px 30px 5px rgba(204, 204, 204, 0.9);
+  -moz-box-shadow: 3px 3px 30px 5px rgba(204, 204, 204, 0.9);
+  box-shadow: 3px 3px 30px 5px rgba(204, 204, 204, 0.9);
+  text-align: center;
+}
+
+.footer {
+  background-color: white;
+  width: 800px;
+  padding: 5px 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+  -webkit-box-shadow: 3px 3px 30px 5px rgba(204, 204, 204, 0.9);
+  -moz-box-shadow: 3px 3px 30px 5px rgba(204, 204, 204, 0.9);
+  box-shadow: 3px 3px 30px 5px rgba(204, 204, 204, 0.9);
+  text-align: center;
+  & h1 {
+    margin: 10px auto;
+  }
+}
+
+.sub-container {
+  max-height:485px;
+  min-height: 380px;
+}
+
+.button-row {
+  height: 70px;
+}
+
+/*#greetings {
+  font-size: 40px;
+  font-style: italic;
+  font-weight: 700;
+}*/
+
+input[type=text],
+input[type=email],
+input[type=password] {
+  width: 300px;
+  background-color: #efefef;
+  color: #666;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+  outline: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus {
+  -webkit-box-shadow: 0px 0px 10px 2px rgba(204, 204, 204, 0.9);
+  -moz-box-shadow: 0px 0px 10px 2px rgba(204, 204, 204, 0.9);
+  box-shadow: 0px 0px 10px 2px rgba(204, 204, 204, 0.9);
+  border: 2px solid #a5cda5;
+  background-color: #e9f3e9;
+  color: #428c42;
+}
+
+input[type=submit], button.submit, button.clear, button.next, button.back, button.done, button.no-next {
+  /*position: relative;*/
+  background-color: #36b03c;
+  color: white;
+  font-size: 20px;
+  padding: 15px 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  outline: none;
+  &.next {
+    width: @half-size;
+    /*background-color: #36b03c;*/
+    background-color: #1B5E20;
+    color: @white;
+    margin-left: 10px;
+  }
+  &.no-next {
+    width: @half-size;
+    background-color: #388e3c;
+    color: @light-grey;
+    margin-left: 10px;
+  }
+  &.back {
+    width: @half-size;
+    background-color: #E65100;
+    color: @white;
+    margin-right: 10px;
+  }
+  &.clear {
+    width: @half-size;
+    background-color: #BF360C;
+    color: @white;
+    margin-right: 10px;
+  }
+  &.done {
+    width: @full-size;
+    background-color: #1B5E20;
+    color: @white;
+  }
+}
+
+input[type=submit]:focus {
+  -webkit-box-shadow: 0px 0px 15px 5px rgba(204, 204, 204, 0.9);
+  -moz-box-shadow: 0px 0px 15px 5px rgba(204, 204, 204, 0.9);
+  box-shadow: 0px 0px 15px 5px rgba(204, 204, 204, 0.9);
+}
+
+input[type=submit]:hover {
+  background-color: #37b93d;
+}
+
+input.password, input.confirm {
+  width: 268px;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 5px;
+  width: 100%;
+}
+
+.error {
+  background: #b52d30;
+  color: #fff;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  border-radius: 0 0 3px 3px;
+  line-height: 1;
+  padding: 6px 10px;
+  margin-top: -1px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-color1 {
+  color: darkorchid;
+}
+
+.mat-color-2 {
+  color: darkmagenta;
+}
+button mat-icon.mat-icon {
+  width: @icon-size;
+  height: @icon-size;
+}
+button>div.label {
+  /*position: relative;*/
+  /*top: 5px;*/
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+.password-row {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+div#confirm-icon mat-icon, div#password-icon mat-icon {
+  background-repeat: no-repeat;
+  display: inline-block;
+  fill: currentColor;
+  height: 24px;
+  width: 24px;
+  margin: 25px 0 0 8px;
+}
+
+label.mat-checkbox-layout {
+  position: relative;
+  left: -125px;
+}
+
+div.check-box-row {
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
